@@ -11,18 +11,29 @@ Works on Linux, macOS, and Windows — no configuration required.
 You need [Go](https://go.dev) installed (1.21 or newer).
 
 ```bash
-cd /path/to/fm
-go build -o fm .
+git clone https://github.com/tissanr/fm.git
+cd fm
+make install
 ```
 
-Then move the binary somewhere on your `PATH`:
+This builds the binary and installs it to `/usr/local/bin/fm`.
+
+To install to a different location pass `PREFIX`:
 
 ```bash
-# Linux / macOS
-mv fm /usr/local/bin/fm
-
-# Windows — move fm.exe to any folder that is in your PATH
+make install PREFIX=~/.local
 ```
+
+Other make targets:
+
+| Command | What it does |
+|---------|--------------|
+| `make build` | Compile the binary into the current directory |
+| `make install` | Build and install to `$PREFIX/bin` (default: `/usr/local/bin`) |
+| `make uninstall` | Remove the installed binary |
+| `make clean` | Remove the local build artifact |
+
+> **Windows:** `make` is not available by default. Build manually with `go build -o fm.exe .` and move `fm.exe` to a folder on your `PATH`.
 
 ---
 
