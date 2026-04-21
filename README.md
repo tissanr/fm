@@ -33,7 +33,11 @@ Other make targets:
 | `make uninstall` | Remove the installed binary |
 | `make clean` | Remove the local build artifact |
 
-> **Windows:** `make` is not available by default. Build manually with `go build -o fm.exe .` and move `fm.exe` to a folder on your `PATH`.
+> **Windows:** `make` is not available by default. Build manually with:
+> ```
+> go build -o fm.exe .
+> ```
+> Then move `fm.exe` to a folder on your `PATH`. A good place is `C:\Users\<YourName>\AppData\Local\Microsoft\WindowsApps` — it's already on the PATH for your user and doesn't require admin rights. You can also add any folder you like to your PATH via **System Properties → Environment Variables → User variables → Path**.
 
 ---
 
