@@ -1,6 +1,6 @@
 # fm
 
-A tiny command-line tool that opens a folder in your default file manager.
+How many times did you just want to open your current directory from the terminal in your default file manager? `fm` does it for you.
 
 Works on Linux, macOS, and Windows — no configuration required.
 
