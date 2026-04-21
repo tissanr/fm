@@ -33,11 +33,29 @@ Other make targets:
 | `make uninstall` | Remove the installed binary |
 | `make clean` | Remove the local build artifact |
 
-> **Windows:** `make` is not available by default. Build manually with:
+> **Windows:** Use the included PowerShell script instead of `make`:
+>
+> ```powershell
+> git clone https://github.com/tissanr/fm.git
+> cd fm
+> .\install.ps1
 > ```
-> go build -o fm.exe .
-> ```
-> Then move `fm.exe` to a folder on your `PATH`. A good place is `C:\Users\<YourName>\AppData\Local\Microsoft\WindowsApps` — it's already on the PATH for your user and doesn't require admin rights. You can also add any folder you like to your PATH via **System Properties → Environment Variables → User variables → Path**.
+>
+> This builds `fm.exe` and installs it to `%LOCALAPPDATA%\Microsoft\WindowsApps`, which is already on your PATH without needing admin rights.
+>
+> Other commands:
+>
+> | Command | What it does |
+> |---------|--------------|
+> | `.\install.ps1` | Build and install (default) |
+> | `.\install.ps1 build` | Compile only |
+> | `.\install.ps1 uninstall` | Remove the installed binary |
+> | `.\install.ps1 clean` | Remove the local build artifact |
+>
+> To install to a custom folder: `.\install.ps1 -Target "C:\my\folder"`
+>
+> If PowerShell blocks the script, run this once first:
+> `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
 
 ---
 
