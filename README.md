@@ -16,12 +16,12 @@ cd fm
 make install
 ```
 
-This builds the binary and installs it to `/usr/local/bin/fm`.
+This builds the binary and installs it to `~/.local/bin/fm` — no `sudo` required.
 
 To install to a different location pass `PREFIX`:
 
 ```bash
-make install PREFIX=~/.local
+make install PREFIX=/usr/local
 ```
 
 Other make targets:
@@ -29,9 +29,14 @@ Other make targets:
 | Command | What it does |
 |---------|--------------|
 | `make build` | Compile the binary into the current directory |
-| `make install` | Build and install to `$PREFIX/bin` (default: `/usr/local/bin`) |
+| `make install` | Build and install to `$PREFIX/bin` (default: `~/.local/bin`) |
 | `make uninstall` | Remove the installed binary |
 | `make clean` | Remove the local build artifact |
+
+> Make sure `~/.local/bin` is on your `PATH`. Most Linux distros include it by default. If `fm` is not found after install, add this to your `~/.bashrc` or `~/.zshrc`:
+> ```bash
+> export PATH="$HOME/.local/bin:$PATH"
+> ```
 
 > **Windows:** Use the included PowerShell script instead of `make`:
 >

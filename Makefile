@@ -1,5 +1,5 @@
 BINARY  := fm
-PREFIX  ?= /usr/local
+PREFIX  ?= $(HOME)/.local
 BINDIR  := $(PREFIX)/bin
 
 .PHONY: build install uninstall clean
